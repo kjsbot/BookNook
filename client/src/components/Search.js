@@ -7,7 +7,7 @@ const SearchPage = () => {
             <input
                 className="input"
                 type="text"
-                placeholder="Search by book name or author..."
+                placeholder="Search by book name..."
             />
         </form>
     )

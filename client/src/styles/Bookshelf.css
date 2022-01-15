@@ -5,3 +5,15 @@
 hr {
     width: 60%;
 }
+
+.search-btn {
+    position: fixed;
+    cursor: pointer;
+    border-radius: 50%;
+    bottom: 50px;
+    right: 50px;
+    padding: 20px;
+    outline: none;
+    background-color: salmon;
+    border: 2px solid salmon;
+}

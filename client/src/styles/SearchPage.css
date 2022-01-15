@@ -1,5 +1,8 @@
 .search-pg {
     font-family: 'Karla', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -32,4 +35,24 @@ h1 {
 
 .input:focus {
     box-shadow: 0 0 4px #84cabb;
+}
+
+.results-container {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 2rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.more-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #dbf7f1;
+    border: 2px dashed #71c8b6;
 }

@@ -1,0 +1,36 @@
+.res-card {
+    font-family: 'Vollkorn', serif;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;
+    /*box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;*/
+    margin: 15px;
+    padding: 15px;
+    min-height: 350px;
+    width: 220px;
+    border-radius: 8px;
+    transition: 0.1s;
+}
+
+.res-card:hover {
+    border: 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 15px 0px;
+    /*
+    box-shadow: #c0d6df 0px 2px 18px 0px;
+    box-shadow: #ffc1a586 0px 0px 15px 0px;*/
+}
+
+.title {
+    margin: 5px 0;
+}
+
+.author {
+    padding: 0;
+    margin: 0;
+    color: rgb(124, 124, 124);
+}
+
+.add-btn {
+    cursor: pointer;
+    margin: 20px 0;
+}
