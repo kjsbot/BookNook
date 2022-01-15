@@ -8,7 +8,6 @@ import ResultCard from "./ResultCard";
 const SearchPage = () => {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if (!query) return setResults([])
@@ -16,28 +15,34 @@ const SearchPage = () => {
         // async and await functions javascript
         //const fetchBooks = () => {
         axios.get(
-            `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=8&key=AIzaSyCUwri9Ny5DK26fTtiLuQBlUK5ZUMWh2nY`
+            `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=12&printType=books&key=AIzaSyCUwri9Ny5DK26fTtiLuQBlUK5ZUMWh2nY`
         ).then((res) => {
             setResults(res.data.items.map(book => {
                 return {
-                    //cover: book.volumeInfo.imageLinks.thumbnail,
+                    cover: book.volumeInfo.imageLinks,
                     title: book.volumeInfo.title,
                     authors: book.volumeInfo.authors,
                 }
             }))
-            //console.log(res.data.items[0].volumeInfo.title)
-            //console.log(res.data.items[0].volumeInfo.imageLinks.thumbnail)
-            //console.log(res.data.items[0].volumeInfo.authors)
+            //console.log(res.data.items[0].volumeInfo.imageLinks)
         })
         //}
     }, [query])
 
-    // DON'T PRESS THE BUTTON!!
+    // button can't appear if the user doesn't type anything or of query is empty
     const loadMore = async () => {
         const moreBooks = await axios.get(
-            `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=4&startIndex=${results.length}&key=AIzaSyCUwri9Ny5DK26fTtiLuQBlUK5ZUMWh2nY`
+            `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=4&printType=books&startIndex=${results.length}&key=AIzaSyCUwri9Ny5DK26fTtiLuQBlUK5ZUMWh2nY`
         )
-        setResults((oldRes) => [...oldRes, ...moreBooks.data.items])
+
+        const temp = moreBooks.data.items.map(book => {
+            return {
+                cover: book.volumeInfo.imageLinks,
+                title: book.volumeInfo.title,
+                authors: book.volumeInfo.authors,
+            }
+        })
+        setResults((oldResults) => [...oldResults, ...temp])
     }
 
     return (
@@ -55,20 +60,24 @@ const SearchPage = () => {
                     />
                 </form>
 
-                <div className="results-container">
+                <div className="wrapper">
                     {results.map((book, index) => (
                         <ResultCard book={book} key={index} />
                     ))}
                 </div>
 
+                <div className="btn-div">
+                    {query.length > 0 &&
+                        <motion.button
+                            className="more-btn"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={loadMore}>
+                            More
+                        </motion.button>
+                    }
+                </div>
 
-                <motion.button
-                    className="more-btn"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={loadMore}>
-                    More
-                </motion.button>
             </div>
         </div>
     )

@@ -6,7 +6,6 @@ header {
     display: flex;
     align-items: center;
     padding: 0 10px;
-    width: 100%;
 }
 
 .logo {
@@ -16,6 +15,7 @@ header {
 }
 
 header .brand a {
+    color: rgb(75, 75, 75);
     font-weight: 700;
     font-size: 1.7rem;
     text-decoration: none;
