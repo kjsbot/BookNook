@@ -1,9 +1,51 @@
 .shelf {
     font-family: 'Karla', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-hr {
+.top {
+    display: flex;
+    justify-content: space-between;
     width: 60%;
+    align-items: center;
+}
+
+.book-h1 {
+    display: flex;
+    justify-content: left;
+    font-size: 3em;
+    color: black;
+}
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }  
+
+hr {
+    width: 65%;
 }
 
 .search-btn {
@@ -14,6 +56,6 @@ hr {
     right: 50px;
     padding: 20px;
     outline: none;
-    background-color: salmon;
-    border: 2px solid salmon;
+    background-color: rgb(255, 193, 164);
+    border: 2px solid rgb(255, 178, 143);
 }
