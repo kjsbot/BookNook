@@ -1,6 +1,5 @@
 import React from "react";
 import '../styles/Bookshelf.css';
-import '../images/search.png';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { FaSearch } from 'react-icons/fa';

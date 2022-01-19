@@ -24,7 +24,6 @@ const SearchPage = () => {
                     authors: book.volumeInfo.authors,
                 }
             }))
-            //console.log(res.data.items[0].volumeInfo.imageLinks)
         })
         //}
     }, [query])
