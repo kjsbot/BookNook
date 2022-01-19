@@ -32,6 +32,10 @@
     display: block;
   }
 
+  .dropdown-content a:hover {
+      background-color: rgb(223, 223, 223);
+  }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -46,6 +50,7 @@
 
 hr {
     width: 65%;
+    margin: 10px 0;
 }
 
 .search-btn {
@@ -56,6 +61,6 @@ hr {
     right: 50px;
     padding: 20px;
     outline: none;
-    background-color: rgb(255, 193, 164);
-    border: 2px solid rgb(255, 178, 143);
+    background-color: rgb(255, 122, 61);
+    border: 2px solid rgb(255, 112, 46);
 }
