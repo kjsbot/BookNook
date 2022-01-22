@@ -9,11 +9,11 @@ const bookSchema = mongoose.Schema({
         type: [String],
     },
     cover: {
-        type: Image,
-        //default
+        type: String,
+        default: ".../client/src/images/books.png",
     },
     status: {
-        type: String, /// for now
+        type: String,
         default: "Start Reading",
     }
 });
