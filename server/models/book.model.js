@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// each post has to have these objects
 const bookSchema = mongoose.Schema({
     title: {
         type: String,
@@ -7,6 +8,7 @@ const bookSchema = mongoose.Schema({
     },
     authors: {
         type: [String],
+        default: ["N/A"],
     },
     cover: {
         type: String,
